@@ -68,9 +68,9 @@ def main():
 
         # Get the time from the picture name
         time = ''
-        if '24hr' in pictue_name:
+        if '24hr' in pictue_name or '24hours' in str.lower(pictue_name):
             time = '24hr'
-        elif '48hr' in pictue_name:
+        elif '48hr' in pictue_name or '48hours' in str.lower(pictue_name):
             time = '48hr'
 
         # If the plate was a NO DRUG plate ND to name
@@ -150,7 +150,7 @@ def get_image_index(image_name):
             return 0
         else:
             return 1
-    elif '48hr' in image_name:
+    if '48hr' in image_name:
         if not is_ND:
             return 2
         else:
